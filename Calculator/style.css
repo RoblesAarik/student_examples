@@ -27,7 +27,7 @@ body {
   font-size: 48px;
   border-radius: 50%;
   text-align: center;
-  padding-top: 4px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -44,8 +44,7 @@ body {
 
 #numbers {
   display: flex;
-  flex-flow: row, wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 250px;
   padding-left: 20px;
   padding-top: 20px;
