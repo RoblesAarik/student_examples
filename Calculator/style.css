@@ -1,0 +1,34 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+#container {
+  height: 50em;
+  width: 50em;
+  text-align: center;
+  border-radius: 15px;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+#answer {
+  width: 100%;
+  border: 1px solid blue;
+  display: block;
+}
+
+.button {
+  border: 1px solid orange;
+  width: 60px;
+  height: 60px;
+  font-size: 48px;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  color: orange;
+}
