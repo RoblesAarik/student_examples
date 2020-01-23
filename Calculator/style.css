@@ -3,18 +3,21 @@ body {
 }
 
 #container {
-  height: 50em;
-  width: 50em;
+  height: 600px;
+  width: 400px;
   text-align: center;
   border-radius: 15px;
   margin: 0 auto;
-  border: 1px solid red;
+  border: 1px solid black;
 }
 
 #answer {
-  width: 100%;
-  border: 1px solid blue;
+  width: 90%;
+  border: 1px solid orange;
   display: block;
+  text-align: right;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .button {
@@ -31,4 +34,19 @@ body {
 .button:hover {
   background-color: black;
   color: orange;
+}
+
+.button:active {
+  background-color: yellow;
+  color: orange;
+  border-color: orange;
+}
+
+#numbers {
+  display: flex;
+  flex-flow: row, wrap;
+  justify-content: space-around;
+  width: 250px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
