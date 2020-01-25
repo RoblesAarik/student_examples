@@ -11,13 +11,14 @@ body {
   border: 1px solid black;
 }
 
-#answer {
-  width: 90%;
+#display {
+  width: 335px;
   border: 1px solid orange;
   display: block;
   text-align: right;
   padding: 15px;
   border-radius: 10px;
+  height: 32px;
 }
 
 .button {
@@ -42,10 +43,12 @@ body {
   border-color: orange;
 }
 
-#numbers {
+.numbers {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 250px;
   padding-left: 20px;
   padding-top: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
