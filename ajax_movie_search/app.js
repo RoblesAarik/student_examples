@@ -1,13 +1,16 @@
 console.log("Works");
 
 $(() => {
-  $.ajax({
+  const promise = $.ajax({
     url: "http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen",
-    success: data => {
+  });
+
+  promise.then(
+    data => {
       console.log(data);
     },
-    error: () => {
+    () => {
       console.log("bad request");
-    },
-  });
+    }
+  );
 });
