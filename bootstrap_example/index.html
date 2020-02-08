@@ -14,7 +14,7 @@
     <title>Bootstrap Framework Example</title>
   </head>
   <nav>
-    <ul class="nav" class="nav-tabs">
+    <ul class="nav nav-tabs">
       <li class="nav-item">
         <a class="nav-link" href="#">HOME</a>
       </li>
@@ -31,29 +31,29 @@
   </nav>
 
   <!-- START Image -->
-  <div>
-      <img src="img/asset_holder.jpg"/>
+  <div class="text-center">
+      <img src="img/asset_holder.jpg" class="img-fluid"/>
   </div>
   <!-- END Image -->
 
   <!-- START body wrapping -->
-  <div>
+  <div class="container">
 
     <!-- START Page Header -->
-    <div>
+    <div class="container-fluid">
       <h1>Example page header <small>Subtext for header</small></h1>
     </div>
     <!-- END Page header -->
 
     <!-- START Three content sections -->
-  <div>
-    <div>
+  <div class="row">
+    <div class="col-sm">
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor. </p>
     </div>
-    <div>
+    <div class="col-sm">
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
     </div>
-    <div>
+    <div class="col-sm">
       <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
     </div>
   </div>
@@ -61,12 +61,12 @@
 
     <hr>
   <!-- START Callout box -->
-  <div>
+  <div class="jumbotron">
     <h1>Hello, world!</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in.</p>
 
     <!-- START Learn More link -->
-    <p><a href="#">Learn more</a></p>
+    <p><a class="btn btn-primary" href="#">Learn more</a></p>
     <!-- END Learn More link -->
   </div>
   <!-- END Callout box -->
@@ -74,7 +74,7 @@
     <hr>
 
   <!-- START Information Table -->
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Name</th>
