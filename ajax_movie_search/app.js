@@ -13,6 +13,7 @@ $(() => {
         $("#title").html(data.Title);
         $("#year").html(data.Year);
         $("#rated").html(data.Rated);
+        console.log(data);
       },
       () => {
         console.log("bad");
