@@ -7,10 +7,12 @@
   </head>
   <body>
     <h1>Fruits Index Page</h1>
-    <ul>
-      <li><a href="http://localhost:3000/fruits/0">Apple Page</a></li>
-      <li><a href="http://localhost:3000/fruits/1">Pear Page</a></li>
-      <li><a href="http://localhost:3000/fruits/2">Banana Page</a></li>
-    </ul>
+    <% for (let i = 0; i < fruit.length; i++) { %>
+    <li><a href="/fruits/<%=i%>"><%= fruit[i].name %></a></li>
+    <% } %>
+
+    <nav>
+      <a href="/fruits/new">Create a New Fruit</a>
+    </nav>
   </body>
 </html>

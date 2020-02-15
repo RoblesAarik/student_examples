@@ -29,11 +29,11 @@ app.use((req, res, next) => {
 // and sends to the body
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/fruits/", (req, res) => {
-  res.send(fruits);
-});
+// app.get("/fruits/", (req, res) => {
+//   res.send(fruits);
+// });
 
-app.get("/fruits/index", (req, res) => {
+app.get("/fruits", (req, res) => {
   // res.send(fruits[req.params.indexOfFruitsArray]);
   res.render("index.ejs", {
     fruit: fruits,
@@ -59,9 +59,13 @@ app.post("/fruits", (req, res) => {
   } else {
     req.body.readyToEat = false;
   }
-  fruits.push(req.body);
+  let fruit = {};
+  fruit.name = req.body.name;
+  fruit.color = req.body.color;
+  fruit.readyToEat = req.body.readyToEat;
+  fruits.push(fruit);
   console.log("fruits", fruits);
-  res.send("data recieved");
+  res.redirect("/fruits");
 });
 
 app.listen(port, () => {
