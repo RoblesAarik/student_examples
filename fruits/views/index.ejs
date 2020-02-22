@@ -9,8 +9,11 @@
     <h1>Fruits Index Page</h1>
     <% for (let i = 0; i < fruit.length; i++) { %>
     <li><a href="/fruits/<%=i%>"><%= fruit[i].name %></a></li>
+    <p><a href="/fruits/<%=i%>/edit">Edit this fruit</a></p>
+    <form action="/fruits/<%=i; %>?_method=DELETE" method="POST">
+      <input type="submit" value="DELETE" />
+    </form>
     <% } %>
-
     <nav>
       <a href="/fruits/new">Create a New Fruit</a>
     </nav>

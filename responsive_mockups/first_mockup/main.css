@@ -1,0 +1,38 @@
+body {
+  background: hsla(146, 62%, 95%, 1);
+}
+
+.container2 {
+  display: flex;
+}
+
+.a {
+  background-color: blue;
+  height: 100px;
+  width: 100%;
+}
+
+.b {
+  background-color: red;
+  height: 200px;
+  width: 80%;
+}
+
+.c {
+  background-color: green;
+  height: 200px;
+  width: 20%;
+  float: right;
+}
+
+@media (max-width: 600px) {
+  .container2 {
+    display: block;
+  }
+  .b {
+    width: 100%;
+  }
+  .c {
+    width: 100%;
+  }
+}
