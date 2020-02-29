@@ -7,5 +7,13 @@
   </head>
   <body>
     <h1>Capitan Logs</h1>
+    <ul>
+      <% for(let i = 0; i < logs.length; i++) { %>
+      <li>
+        <a href="/logs/<%= logs[i].id%> "><%= logs[i].title %></a>
+      </li>
+      <% } %>
+    </ul>
+    <a href="/logs/new">Create New Log</a>
   </body>
 </html>

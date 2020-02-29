@@ -11,6 +11,6 @@ const logSchema = new mongoose.Schema(
 );
 
 // Attach model
-const Log = mongoose.model("Log", logSchema);
+const Logs = mongoose.model("Log", logSchema);
 
-module.exports = Log;
+module.exports = Logs;
