@@ -5,6 +5,11 @@ const app = express();
 // Middleware
 app.use(express.urlencoded({ extended: true }));
 
+// Index Route
+app.get("/logs", (req, res) => {
+  res.render("index.ejs");
+});
+
 // NEW ROUTE
 app.get("/logs/new", (req, res) => {
   res.render("new.ejs");
@@ -17,7 +22,7 @@ app.post("/logs", (req, res) => {
   } else {
     req.body.shipIsBroken = false;
   }
-  res.send(req.body);
+  res.redirect("/logs/:id");
 });
 
 app.listen(3000, () => {
