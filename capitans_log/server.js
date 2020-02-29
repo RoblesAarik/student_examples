@@ -66,6 +66,15 @@ app.get("/logs/seed", (req, res) => {
   );
 });
 
+// Show Route
+app.get("/logs/:id", (req, res) => {
+  Logs.findById(req.params.id, (err, foundLog) => {
+    res.render("show.ejs", {
+      logs: foundLog,
+    });
+  });
+});
+
 app.listen(3000, () => {
   console.log("listening");
 });
