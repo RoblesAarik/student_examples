@@ -1,0 +1,41 @@
+.container {
+  height: 1000px;
+  width: 1000px;
+  margin: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.last {
+  align-self: flex-end;
+}
+.small {
+  width: 200px;
+  height: 200px;
+  background-color: whitesmoke;
+}
+
+.left {
+  width: 200px;
+  height: 700px;
+  background-color: whitesmoke;
+}
+
+.bottom {
+  width: 700px;
+  height: 400px;
+  background-color: whitesmoke;
+  align-self: flex-end;
+  margin: 0 auto;
+}
+
+.inside {
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+}
