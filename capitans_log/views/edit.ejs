@@ -8,8 +8,8 @@
     <h1>Edit Capitan Logs Page</h1>
     <form action="/logs/<%= logs.id %>?_method=PUT" method="POST">
       <!--  NOTE: the form is pre-populated with values for the server-->
-      Title: <input type="text" name="name" value="<%=logs.name%>" /><br />
-      Entry: <input type="text" name="color" value="<%=logs.entry%>" /><br />
+      Title: <input type="text" name="title" value="<%=logs.title%>" /><br />
+      Entry: <input type="text" name="entry" value="<%=logs.entry%>" /><br />
       Ship is broken: <input type="checkbox" name="shipIsBroken" <%
       if(logs.shipIsBroken === true){ %> checked <% } %> />
       <br />
