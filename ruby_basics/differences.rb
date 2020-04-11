@@ -65,3 +65,29 @@ end
 fizzbuzz(10)
 
 #Nth Fibonacci
+def nth_fibonacci_number 
+    fibs = [1, 1]
+    num = gets.chomp.to_i
+    while fibs.length < num do
+        length = fibs.length
+        nextFib = fibs[-2] + fibs[-1]
+        fibs.push(nextFib)
+    end
+    puts "#{fibs[-1]} is the next number"
+end
+
+nth_fibonacci_number
+
+#Search Array
+
+# def search_array (array, value)
+#     for i in array do
+#        if i == value 
+#         return true
+#     else
+#         return -1
+#     end 
+# end
+
+# array2 = [1,2,3,4]
+# search_array(array2, 2)
