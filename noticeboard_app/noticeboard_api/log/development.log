@@ -1,0 +1,352 @@
+  [1m[35m (1946.6ms)[0m  [1m[35mCREATE DATABASE "noticeboard_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (659.6ms)[0m  [1m[35mCREATE DATABASE "noticeboard_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (62.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (32.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4155607357493865105)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNotices (20200429003019)
+  [1m[35m (21.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE TABLE "notices" ("id" bigserial primary key, "title" character varying, "author" character varying, "phone" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (24.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200429003019"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (26.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-29 00:47:56.356597"], ["updated_at", "2020-04-29 00:47:56.356597"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(4155607357493865105)[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (28.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There's nothing quite like urinating in the open air."], ["author", "Galen Erso"], ["phone", "225-080-0848"], ["created_at", "2020-04-29 00:56:15.812651"], ["updated_at", "2020-04-29 00:56:15.812651"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Maz Kanata"], ["phone", "308.107.7307"], ["created_at", "2020-04-29 00:56:15.848684"], ["updated_at", "2020-04-29 00:56:15.848684"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Through the darkness of future's past, the magician longs to see. One chants out between two worlds... \"Fire... walk with me.\""], ["author", "Ezra Bridger"], ["phone", "797.495.1759"], ["created_at", "2020-04-29 00:56:15.855117"], ["updated_at", "2020-04-29 00:56:15.855117"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (25.0ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Poe Dameron"], ["phone", "615-234-2615"], ["created_at", "2020-04-29 00:56:15.863287"], ["updated_at", "2020-04-29 00:56:15.863287"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Rey"], ["phone", "390.458.1327"], ["created_at", "2020-04-29 00:56:15.895359"], ["updated_at", "2020-04-29 00:56:15.895359"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Han Solo"], ["phone", "1-499-160-5324"], ["created_at", "2020-04-29 00:56:15.901335"], ["updated_at", "2020-04-29 00:56:15.901335"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Black as midnight on a moonless night."], ["author", "Rose Tico"], ["phone", "371-727-1495"], ["created_at", "2020-04-29 00:56:15.908186"], ["updated_at", "2020-04-29 00:56:15.908186"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (25.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Asajj Ventress"], ["phone", "1-630-326-7161"], ["created_at", "2020-04-29 00:56:15.914518"], ["updated_at", "2020-04-29 00:56:15.914518"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (3.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Wedge Antilles"], ["phone", "(639) 780-8071"], ["created_at", "2020-04-29 00:56:15.948495"], ["updated_at", "2020-04-29 00:56:15.948495"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Through the darkness of future's past, the magician longs to see. One chants out between two worlds... \"Fire... walk with me.\""], ["author", "Bail Organa"], ["phone", "131-426-4763"], ["created_at", "2020-04-29 00:56:15.958507"], ["updated_at", "2020-04-29 00:56:15.958507"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (21.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Wedge Antilles"], ["phone", "441-255-6096"], ["created_at", "2020-04-29 00:56:15.968226"], ["updated_at", "2020-04-29 00:56:15.968226"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Darth Vader"], ["phone", "(645) 601-9195"], ["created_at", "2020-04-29 00:56:15.996753"], ["updated_at", "2020-04-29 00:56:15.996753"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Jar Jar Binks"], ["phone", "366-135-7791"], ["created_at", "2020-04-29 00:56:16.002211"], ["updated_at", "2020-04-29 00:56:16.002211"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Darth Sidious"], ["phone", "627.188.4415"], ["created_at", "2020-04-29 00:56:16.010264"], ["updated_at", "2020-04-29 00:56:16.010264"]]
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There's nothing quite like urinating in the open air."], ["author", "Grand Admiral Thrawn"], ["phone", "463-237-2829"], ["created_at", "2020-04-29 00:56:16.044689"], ["updated_at", "2020-04-29 00:56:16.044689"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Chewbacca"], ["phone", "(178) 201-0778"], ["created_at", "2020-04-29 00:56:16.052415"], ["updated_at", "2020-04-29 00:56:16.052415"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Admiral Ackbar"], ["phone", "1-646-809-6954"], ["created_at", "2020-04-29 00:56:16.059720"], ["updated_at", "2020-04-29 00:56:16.059720"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.1ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Anakin Skywalker"], ["phone", "1-700-854-2616"], ["created_at", "2020-04-29 00:56:16.065536"], ["updated_at", "2020-04-29 00:56:16.065536"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pie. Whoever invented the pie? Here was a great person."], ["author", "Darth Vader"], ["phone", "693.934.9166"], ["created_at", "2020-04-29 00:56:16.098272"], ["updated_at", "2020-04-29 00:56:16.098272"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You may think I've gone insane... but I promise. I will kill again."], ["author", "Luke Skywalker"], ["phone", "214.683.9460"], ["created_at", "2020-04-29 00:56:16.103554"], ["updated_at", "2020-04-29 00:56:16.103554"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Lando Calrissian"], ["phone", "(466) 390-1807"], ["created_at", "2020-04-29 00:56:16.108685"], ["updated_at", "2020-04-29 00:56:16.108685"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (25.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sometimes jokes are welcome. Like the one about the kid who said: \"I enjoyed school. It was just the principal of the thing.\""], ["author", "Bendu"], ["phone", "1-124-445-6539"], ["created_at", "2020-04-29 00:56:16.113559"], ["updated_at", "2020-04-29 00:56:16.113559"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Windom Earle's mind is like a diamond. It's cold, and hard, and brilliant."], ["author", "Asajj Ventress"], ["phone", "(528) 299-5613"], ["created_at", "2020-04-29 00:56:16.147091"], ["updated_at", "2020-04-29 00:56:16.147091"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Kanan Jarrus"], ["phone", "446-837-8366"], ["created_at", "2020-04-29 00:56:16.154094"], ["updated_at", "2020-04-29 00:56:16.154094"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Kanan Jarrus"], ["phone", "1-840-857-1763"], ["created_at", "2020-04-29 00:56:16.162138"], ["updated_at", "2020-04-29 00:56:16.162138"]]
+  [1m[35m (24.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Mon Mothma"], ["phone", "717.123.2519"], ["created_at", "2020-04-29 00:56:16.192215"], ["updated_at", "2020-04-29 00:56:16.192215"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Obi-Wan Kenobi"], ["phone", "472.827.9347"], ["created_at", "2020-04-29 00:56:16.200231"], ["updated_at", "2020-04-29 00:56:16.200231"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Yoda"], ["phone", "872-646-1973"], ["created_at", "2020-04-29 00:56:16.206958"], ["updated_at", "2020-04-29 00:56:16.206958"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (25.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Shmi Skywalker"], ["phone", "800.611.3039"], ["created_at", "2020-04-29 00:56:16.215137"], ["updated_at", "2020-04-29 00:56:16.215137"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.1ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Savage Opress"], ["phone", "(413) 245-9672"], ["created_at", "2020-04-29 00:56:16.247533"], ["updated_at", "2020-04-29 00:56:16.247533"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND."], ["author", "Savage Opress"], ["phone", "919.130.3616"], ["created_at", "2020-04-29 00:56:16.255561"], ["updated_at", "2020-04-29 00:56:16.255561"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Grand Moff Tarkin"], ["phone", "501.087.9813"], ["created_at", "2020-04-29 00:56:16.262156"], ["updated_at", "2020-04-29 00:56:16.262156"]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["author", "Padme Amidala"], ["phone", "887.124.2004"], ["created_at", "2020-04-29 00:56:16.292635"], ["updated_at", "2020-04-29 00:56:16.292635"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Rey"], ["phone", "783.131.0577"], ["created_at", "2020-04-29 00:56:16.299570"], ["updated_at", "2020-04-29 00:56:16.299570"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Sheev Palpatine"], ["phone", "101.923.6548"], ["created_at", "2020-04-29 00:56:16.307140"], ["updated_at", "2020-04-29 00:56:16.307140"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Through the darkness of future's past, the magician longs to see. One chants out between two worlds... \"Fire... walk with me.\""], ["author", "Bail Organa"], ["phone", "1-835-789-3201"], ["created_at", "2020-04-29 00:56:16.315723"], ["updated_at", "2020-04-29 00:56:16.315723"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There's nothing quite like urinating in the open air."], ["author", "Poe Dameron"], ["phone", "109-564-2722"], ["created_at", "2020-04-29 00:56:16.349830"], ["updated_at", "2020-04-29 00:56:16.349830"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Through the darkness of future's past, the magician longs to see. One chants out between two worlds... \"Fire... walk with me.\""], ["author", "Asajj Ventress"], ["phone", "466.572.8998"], ["created_at", "2020-04-29 00:56:16.355976"], ["updated_at", "2020-04-29 00:56:16.355976"]]
+  [1m[35m (26.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (12.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Grand Admiral Thrawn"], ["phone", "459.492.7121"], ["created_at", "2020-04-29 00:56:16.398001"], ["updated_at", "2020-04-29 00:56:16.398001"]]
+  [1m[35m (35.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sometimes jokes are welcome. Like the one about the kid who said: \"I enjoyed school. It was just the principal of the thing.\""], ["author", "Galen Erso"], ["phone", "1-191-035-9704"], ["created_at", "2020-04-29 00:56:16.453714"], ["updated_at", "2020-04-29 00:56:16.453714"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (25.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Damn fine coffee! And hot!"], ["author", "Ezra Bridger"], ["phone", "(601) 548-7034"], ["created_at", "2020-04-29 00:56:16.466579"], ["updated_at", "2020-04-29 00:56:16.466579"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Black as midnight on a moonless night."], ["author", "Lando Calrissian"], ["phone", "1-736-039-6185"], ["created_at", "2020-04-29 00:56:16.499062"], ["updated_at", "2020-04-29 00:56:16.499062"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Watto"], ["phone", "1-531-953-7176"], ["created_at", "2020-04-29 00:56:16.506212"], ["updated_at", "2020-04-29 00:56:16.506212"]]
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Lyra Erso"], ["phone", "(276) 244-8692"], ["created_at", "2020-04-29 00:56:16.548079"], ["updated_at", "2020-04-29 00:56:16.548079"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You know, this is — excuse me — a damn fine cup of coffee!"], ["author", "Padme Amidala"], ["phone", "1-669-382-5876"], ["created_at", "2020-04-29 00:56:16.558376"], ["updated_at", "2020-04-29 00:56:16.558376"]]
+  [1m[35m (25.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Panaka"], ["phone", "1-345-296-0191"], ["created_at", "2020-04-29 00:56:16.592740"], ["updated_at", "2020-04-29 00:56:16.592740"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There's nothing quite like urinating in the open air."], ["author", "Mon Mothma"], ["phone", "958-352-7433"], ["created_at", "2020-04-29 00:56:16.599417"], ["updated_at", "2020-04-29 00:56:16.599417"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Kanan Jarrus"], ["phone", "(539) 532-4016"], ["created_at", "2020-04-29 00:56:16.607718"], ["updated_at", "2020-04-29 00:56:16.607718"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Anakin Skywalker"], ["phone", "839-664-1857"], ["created_at", "2020-04-29 00:56:16.636112"], ["updated_at", "2020-04-29 00:56:16.636112"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Watto"], ["phone", "555-640-1353"], ["created_at", "2020-04-29 00:56:16.645396"], ["updated_at", "2020-04-29 00:56:16.645396"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.0ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "It has been a pleasure speaking to you."], ["author", "Sebulba"], ["phone", "(210) 081-4693"], ["created_at", "2020-04-29 00:56:16.651657"], ["updated_at", "2020-04-29 00:56:16.651657"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Grand Admiral Thrawn"], ["phone", "173-329-0375"], ["created_at", "2020-04-29 00:56:16.658047"], ["updated_at", "2020-04-29 00:56:16.658047"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (35.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Audrey, there are many cures for a broken heart. But nothing quite like a trout's leap in the moonlight."], ["author", "Captain Phasma"], ["phone", "(249) 550-5733"], ["created_at", "2020-04-29 00:56:16.665782"], ["updated_at", "2020-04-29 00:56:16.665782"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (23.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The owls are not what they seem."], ["author", "Padme Amidala"], ["phone", "108-620-6026"], ["created_at", "2020-04-29 00:56:16.713382"], ["updated_at", "2020-04-29 00:56:16.713382"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Admiral Ackbar"], ["phone", "227.141.3633"], ["created_at", "2020-04-29 00:56:16.744431"], ["updated_at", "2020-04-29 00:56:16.744431"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (2.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Bendu"], ["phone", "(478) 469-1316"], ["created_at", "2020-04-29 00:56:16.752009"], ["updated_at", "2020-04-29 00:56:16.752009"]]
+  [1m[35m (24.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Hera Syndulla"], ["phone", "1-550-333-6092"], ["created_at", "2020-04-29 00:56:16.799121"], ["updated_at", "2020-04-29 00:56:16.799121"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.0ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Finn"], ["phone", "869-787-2686"], ["created_at", "2020-04-29 00:56:16.809375"], ["updated_at", "2020-04-29 00:56:16.809375"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (23.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Panaka"], ["phone", "(783) 973-8870"], ["created_at", "2020-04-29 00:56:16.816778"], ["updated_at", "2020-04-29 00:56:16.816778"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "You may think I've gone insane... but I promise. I will kill again."], ["author", "Luke Skywalker"], ["phone", "692-884-6057"], ["created_at", "2020-04-29 00:56:16.847479"], ["updated_at", "2020-04-29 00:56:16.847479"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pie. Whoever invented the pie? Here was a great person."], ["author", "Boba Fett"], ["phone", "580-608-1599"], ["created_at", "2020-04-29 00:56:16.854721"], ["updated_at", "2020-04-29 00:56:16.854721"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Chewbacca"], ["phone", "1-432-872-9699"], ["created_at", "2020-04-29 00:56:16.861130"], ["updated_at", "2020-04-29 00:56:16.861130"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Damn fine coffee! And hot!"], ["author", "Qui-Gon Jinn"], ["phone", "1-986-229-4546"], ["created_at", "2020-04-29 00:56:16.865739"], ["updated_at", "2020-04-29 00:56:16.865739"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "How's Annie? How's Annie? How's Annie?"], ["author", "Shmi Skywalker"], ["phone", "(407) 759-7833"], ["created_at", "2020-04-29 00:56:16.898395"], ["updated_at", "2020-04-29 00:56:16.898395"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Jango Fett"], ["phone", "1-341-377-8776"], ["created_at", "2020-04-29 00:56:16.903108"], ["updated_at", "2020-04-29 00:56:16.903108"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Lando Calrissian"], ["phone", "458-670-4566"], ["created_at", "2020-04-29 00:56:16.911536"], ["updated_at", "2020-04-29 00:56:16.911536"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Lyra Erso"], ["phone", "487.759.4234"], ["created_at", "2020-04-29 00:56:16.916389"], ["updated_at", "2020-04-29 00:56:16.916389"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "MAY A SMILE BE YOUR UMBRELLA. WE'VE ALL HAD OUR SOCKS TOSSED AROUND."], ["author", "Vice Admiral Holdo"], ["phone", "(265) 665-4719"], ["created_at", "2020-04-29 00:56:16.945829"], ["updated_at", "2020-04-29 00:56:16.945829"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Galen Erso"], ["phone", "(861) 814-2249"], ["created_at", "2020-04-29 00:56:16.952249"], ["updated_at", "2020-04-29 00:56:16.952249"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Black as midnight on a moonless night."], ["author", "Borvo the Hutt"], ["phone", "143-624-7926"], ["created_at", "2020-04-29 00:56:16.961062"], ["updated_at", "2020-04-29 00:56:16.961062"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Supreme Leader Snoke"], ["phone", "331-912-6777"], ["created_at", "2020-04-29 00:56:16.966376"], ["updated_at", "2020-04-29 00:56:16.966376"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pie. Whoever invented the pie? Here was a great person."], ["author", "Mon Mothma"], ["phone", "826-209-1157"], ["created_at", "2020-04-29 00:56:16.997516"], ["updated_at", "2020-04-29 00:56:16.997516"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.7ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Will this sadness that makes me cry my heart out — will it ever end? The answer, of course, is yes. One day the sadness will end."], ["author", "Bendu"], ["phone", "797.920.2941"], ["created_at", "2020-04-29 00:56:17.002152"], ["updated_at", "2020-04-29 00:56:17.002152"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Qui-Gon Jinn"], ["phone", "1-402-640-8379"], ["created_at", "2020-04-29 00:56:17.009688"], ["updated_at", "2020-04-29 00:56:17.009688"]]
+  [1m[35m (25.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Finn"], ["phone", "370-671-2126"], ["created_at", "2020-04-29 00:56:17.043452"], ["updated_at", "2020-04-29 00:56:17.043452"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Admiral Ackbar"], ["phone", "642.607.7575"], ["created_at", "2020-04-29 00:56:17.051341"], ["updated_at", "2020-04-29 00:56:17.051341"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.9ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Windom Earle's mind is like a diamond. It's cold, and hard, and brilliant."], ["author", "Luke Skywalker"], ["phone", "907-601-4547"], ["created_at", "2020-04-29 00:56:17.059928"], ["updated_at", "2020-04-29 00:56:17.059928"]]
+  [1m[35m (25.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Through the darkness of future's past, the magician longs to see. One chants out between two worlds... \"Fire... walk with me.\""], ["author", "Panaka"], ["phone", "324-364-3884"], ["created_at", "2020-04-29 00:56:17.092409"], ["updated_at", "2020-04-29 00:56:17.092409"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Do you want to know what the ultimate secret is? Laura did. The secret of knowing who killed you."], ["author", "Poe Dameron"], ["phone", "1-577-181-1607"], ["created_at", "2020-04-29 00:56:17.098688"], ["updated_at", "2020-04-29 00:56:17.098688"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Chewbacca"], ["phone", "510-991-9367"], ["created_at", "2020-04-29 00:56:17.103191"], ["updated_at", "2020-04-29 00:56:17.103191"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "J'ai une âme solitaire."], ["author", "Vice Admiral Holdo"], ["phone", "359-041-2557"], ["created_at", "2020-04-29 00:56:17.110996"], ["updated_at", "2020-04-29 00:56:17.110996"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Every day, once a day, give yourself a present."], ["author", "Rey"], ["phone", "745.283.8412"], ["created_at", "2020-04-29 00:56:17.115866"], ["updated_at", "2020-04-29 00:56:17.115866"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Where we're from, the birds sing a pretty song, and there's always music in the air."], ["author", "Obi-Wan Kenobi"], ["phone", "(129) 236-8903"], ["created_at", "2020-04-29 00:56:17.148742"], ["updated_at", "2020-04-29 00:56:17.148742"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "She's dead... Wrapped in plastic."], ["author", "Ahsoka Tano"], ["phone", "544.864.8980"], ["created_at", "2020-04-29 00:56:17.154589"], ["updated_at", "2020-04-29 00:56:17.154589"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "That gum you like is going to come back in style."], ["author", "Luke Skywalker"], ["phone", "(214) 234-2483"], ["created_at", "2020-04-29 00:56:17.159961"], ["updated_at", "2020-04-29 00:56:17.159961"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (25.2ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Wow, Bob, wow."], ["author", "Galen Erso"], ["phone", "107.804.3629"], ["created_at", "2020-04-29 00:56:17.164682"], ["updated_at", "2020-04-29 00:56:17.164682"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Ahsoka Tano"], ["phone", "218-444-6820"], ["created_at", "2020-04-29 00:56:17.198556"], ["updated_at", "2020-04-29 00:56:17.198556"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.8ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I don't wanna talk. I wanna shoot."], ["author", "Kanan Jarrus"], ["phone", "(105) 273-2855"], ["created_at", "2020-04-29 00:56:17.204453"], ["updated_at", "2020-04-29 00:56:17.204453"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (26.1ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Windom Earle's mind is like a diamond. It's cold, and hard, and brilliant."], ["author", "Chirrut Imwe"], ["phone", "1-482-611-8453"], ["created_at", "2020-04-29 00:56:17.213062"], ["updated_at", "2020-04-29 00:56:17.213062"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Saw Gerrera"], ["phone", "231.349.2454"], ["created_at", "2020-04-29 00:56:17.245549"], ["updated_at", "2020-04-29 00:56:17.245549"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Wow, Bob, wow."], ["author", "Han Solo"], ["phone", "1-323-328-7910"], ["created_at", "2020-04-29 00:56:17.252487"], ["updated_at", "2020-04-29 00:56:17.252487"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Pie. Whoever invented the pie? Here was a great person."], ["author", "Chirrut Imwe"], ["phone", "494.942.8245"], ["created_at", "2020-04-29 00:56:17.259767"], ["updated_at", "2020-04-29 00:56:17.259767"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (24.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Cooper, you may be fearless in this world, but there are other worlds."], ["author", "Grand Admiral Thrawn"], ["phone", "998.286.5242"], ["created_at", "2020-04-29 00:56:17.266229"], ["updated_at", "2020-04-29 00:56:17.266229"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "YOU ARE WITNESSING A FRONT THREE-QUARTER VIEW OF TWO ADULTS SHARING A TENDER MOMENT"], ["author", "Darth Caedus"], ["phone", "(618) 885-4431"], ["created_at", "2020-04-29 00:56:17.296593"], ["updated_at", "2020-04-29 00:56:17.296593"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Harry, is that bag smiling?"], ["author", "Supreme Leader Snoke"], ["phone", "1-391-443-0805"], ["created_at", "2020-04-29 00:56:17.301476"], ["updated_at", "2020-04-29 00:56:17.301476"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "I have no idea where this will lead us. But I have a definite feeling it will be a place both wonderful and strange."], ["author", "Captain Phasma"], ["phone", "1-799-858-9826"], ["created_at", "2020-04-29 00:56:17.308086"], ["updated_at", "2020-04-29 00:56:17.308086"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (25.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (1.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "How's Annie? How's Annie? How's Annie?"], ["author", "Panaka"], ["phone", "1-240-833-8332"], ["created_at", "2020-04-29 00:56:17.315269"], ["updated_at", "2020-04-29 00:56:17.315269"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.4ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "COOPER, YOU REMIND ME TODAY OF A SMALL MEXICAN CHIHUAHUA."], ["author", "Grand Admiral Thrawn"], ["phone", "135.590.7701"], ["created_at", "2020-04-29 00:56:17.348543"], ["updated_at", "2020-04-29 00:56:17.348543"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (15.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "There was a fish in the percolator!"], ["author", "Ki-Adi-Mundi"], ["phone", "1-180-827-7917"], ["created_at", "2020-04-29 00:56:17.374870"], ["updated_at", "2020-04-29 00:56:17.374870"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mNotice Create (0.5ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Black as midnight on a moonless night."], ["author", "Supreme Leader Snoke"], ["phone", "(650) 218-7723"], ["created_at", "2020-04-29 00:56:17.396104"], ["updated_at", "2020-04-29 00:56:17.396104"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/notice" for ::1 at 2020-04-28 17:56:42 -0700
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/notice"):
+  
+actionpack (6.0.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.2.2) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/notices" for ::1 at 2020-04-28 17:57:00 -0700
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (16.2ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+  ↳ app/controllers/notices_controller.rb:8:in `index'
+Completed 200 OK in 249ms (Views: 95.2ms | ActiveRecord: 147.3ms | Allocations: 18598)
+
+
